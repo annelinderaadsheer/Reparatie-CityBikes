@@ -44,7 +44,7 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    background: #1B2030 url(world.jpg) 50% 0 no-repeat;
+    background: #1B2030 url(world-2.jpg) 50% 0 no-repeat;
     background-size: cover;
     background-attachment: fixed;
     animation: grow 360s linear 10ms infinite;
@@ -128,4 +128,21 @@ a {
     display: inline-block;
     padding: 5px 10px;
     font-weight: 600;
+}
+
+/* Stijl de footer */
+footer {
+    background-color: #333; /* Donkere achtergrondkleur */
+    color: #fff; /* Witte tekstkleur */
+    text-align: center; /* Centraal uitgelijnde tekst */
+    padding: 20px 0; /* Ruimte boven en onder de tekst */
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Voor de footer inhoud */
+.footer-content p {
+    font-size: 14px; /* Kleinere tekstgrootte */
+    margin: 0; /* Verwijder de marge van de p */
 }
