@@ -37,6 +37,7 @@ header h1 {
     color: var(--text-color);
     padding-top: 1em;
     flex-basis: 100%;
+    margin-top: 1em;
 }
 
 .content {
@@ -149,7 +150,7 @@ footer {
     }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     header {
         flex-direction: row;
         height: 18.75em;
@@ -174,4 +175,4 @@ footer {
     footer p {
         font-size: 0.875em;
     }
-}
+} */
