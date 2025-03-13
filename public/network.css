@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
 
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+}
+
 html, body {
     margin: 0;
     height: 100%;
@@ -11,32 +16,37 @@ a {
 }
 
 header {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    color: #000;
+    height: 18.75em; 
+    background-color: var(--background-color);
+    padding: 1.25em;
     text-align: center;
-    padding: 20px;
+    margin-top: -4rem;
+    margin-bottom: -4rem;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 6em;
     margin: 0;
+    color: var(--text-color);
+    padding-top: 1em;
 }
 
 .content {
     padding: 5% 10%;
     text-align: justify;
-    color: #000;
+    color: var(--text-color);
 }
 
 #stations {
-    background: #fff;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    padding: 0.625em; 
+    margin: 0.625em 0; 
+    border-radius: 0.375em; 
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -47,27 +57,29 @@ header h1 {
 
 .btn {
     background: #fff;
-    color: #333;
+    color: var(--text-color);
     font-weight: bold;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    font-size: 1em; 
+    border: 0.0625em solid #ccc; 
+    border-radius: 0.375em; 
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 0.9375em 1.25em; 
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
-    background: #f0f0f0; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
+    background-color: var(--background-color);
+    box-shadow: 0 0.25em 1.25em rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
 }
 
 footer {
-    background-color: #333;
-    color: #fff; 
+    color: var(--text-color);
+    background-color: var(--background-color);
     text-align: center;
-    padding: 20px 0;
+    padding: 1.25em 0; 
+    position: relative;
     width: 100%;
+    bottom: 0;
 }

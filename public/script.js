@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             networkDiv.innerHTML = `
                 <h2>${network.name}</h2>
                 <p><strong>ID:</strong> ${network.id}</p>
-                <p><a href="network.html?id=${network.id}">View Stations</a></p>
+                <p><a href="network.html?id=${network.id}">Bekijk Stations</a></p>
 
             `;
             networksContainer.appendChild(networkDiv);
