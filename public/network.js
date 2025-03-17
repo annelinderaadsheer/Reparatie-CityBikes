@@ -12,35 +12,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // Vraag netwerkgegevens op via de API
-        const response = await axios.get(`http://api.citybik.es/v2/networks/${networkId}`);
-        const data = await response.json();
+        const response = await fetch(`https://api.citybik.es/v2/networks/${networkId}`);
+        const networkData = await response.json(); // Haal de JSON data op
 
-        // Zet de titel van de pagina
-        networkTitle.textContent = `Stations in ${data.network.name}`;
+        // Verander de titel van de pagina
+        networkTitle.textContent = `Stations in ${networkData.network.name}`;
 
         // Controleer of er stations zijn
-        if (!data.network.stations || data.network.stations.length === 0) {
+        if (!networkData.network.stations || networkData.network.stations.length === 0) {
             stationsContainer.innerHTML = "<p>Geen stations gevonden.</p>";
             return;
         }
 
         // Stations weergeven
-        stationsContainer.innerHTML = ""; // Clear de loading tekst
-        data.network.stations.forEach(station => {
+        stationsContainer.innerHTML = ''; // Clear de container
+        networkData.network.stations.forEach(station => {
             const stationDiv = document.createElement('div');
             stationDiv.className = 'station';
             stationDiv.innerHTML = `
                 <h3>${station.name}</h3>
-                <p><strong>Fietsen beschikbaar:</strong> ${station.free_bikes}</p>
-                <p><strong>Docking stations:</strong> ${station.empty_slots}</p>
+                <p>🚲 Fietsen: ${station.free_bikes}</p>
+                <p>🔌 Docking slots: ${station.empty_slots}</p>
+                <p class="status ${station.free_bikes > 0 ? 'available' : 'empty'}">
+                    ${station.free_bikes > 0 ? '✅ Beschikbaar' : '❌ Geen fietsen'}
+                </p>
             `;
             stationsContainer.appendChild(stationDiv);
         });
 
     } catch (error) {
         stationsContainer.innerHTML = "<p>Fout bij het laden van stations.</p>";
-        console.error(error);
+        console.error('Foutmelding:', error);
     }
 });
-
