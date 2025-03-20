@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             stationDiv.innerHTML = `
                 <h3>${station.name}</h3>
                 <p> Fietsen: ${station.free_bikes}</p>
-                <p> Docking slots: ${station.empty_slots}</p>
+                <p> Oplaad punten: ${station.empty_slots}</p>
                 <p class="status ${station.free_bikes > 0 ? 'available' : 'empty'}">
                     ${station.free_bikes > 0 ? 'Beschikbaar' : 'Geen fietsen'}
                 </p>

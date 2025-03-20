@@ -13,9 +13,16 @@
 
     <section class="content">
         <h2>Netwerk Overzicht</h2>
-        <input type="text" id="filterInput" placeholder="Zoek netwerk bij naam.." />
+
+        <form action="#" method="get">
+            <label for="filterInput" class="filter-hidden">Zoek netwerk bij naam:</label>
+            <input type="text" id="filterInput" name="filter" placeholder="Zoek netwerk bij naam..." />
+        </form>
+        
         <div id="networks"></div>
-        <button id="viewMoreBtn" class="btn">Meer laden</button>
+        
+        <button id="viewMoreBtn" class="btn" type="button" aria-label="Meer laden">Meer laden</button>
+
     </section>
 
     <footer>
