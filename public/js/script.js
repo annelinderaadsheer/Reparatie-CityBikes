@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // View transitions
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("a").forEach(link => {
