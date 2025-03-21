@@ -5,6 +5,10 @@
     --text-color: #333333;
 }
 
+@view-transition {
+    navigation: auto;
+} 
+
 html, body {
     margin: 0;
     height: 100%;

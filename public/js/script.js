@@ -50,3 +50,29 @@ document.addEventListener('DOMContentLoaded', () => {
         renderNetworks(networksData);  // Render de netwerken met de nieuwe limiet
     });
 });
+
+
+// View transitions
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", async (event) => {
+            event.preventDefault();
+            const url = event.target.href;
+            
+            if (!document.startViewTransition) {
+                window.location.href = url; // Fallback voor niet-ondersteunde browsers
+                return;
+            }
+
+            document.startViewTransition(async () => {
+                const response = await fetch(url);
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
+
+                document.body.innerHTML = doc.body.innerHTML;
+                window.history.pushState({}, "", url);
+            });
+        });
+    });
+});
