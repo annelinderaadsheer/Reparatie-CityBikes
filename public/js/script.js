@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// View transitions
+// // View transitions
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", async (event) => {
@@ -75,3 +75,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
